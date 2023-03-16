@@ -43,20 +43,6 @@ export function App() {
     setContacts(contacts.filter(contact => contact.id !== event.target.id));
   };
 
-  const componentDidMount = () => {
-    const contacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(contacts);
-    if (parsedContacts) {
-      this.setState({ contacts: parsedContacts });
-    }
-  };
-
-  //  const componentDidUpdate(prevProps, prevState) {
-  //   if (this.state.contacts !== prevState.contacts) {
-  //     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-  //   }
-  // }
-
   return (
     <div>
       <ContactForm
